@@ -68,7 +68,7 @@ ___Задача 15__: Напишите программу, которая при
 7 -> да
 1 -> нет
 */
-using System.Globalization;
+
 
 int InputNum(string message)
 {
@@ -77,16 +77,19 @@ int InputNum(string message)
     return num;
 }
 string Holiday(int num)
-{   string res = "нет";
-    if (num==6 && num==7)
+{   
+    string res = "нет";
+    if (num==6 || num==7)
     {
-        string res = "да";
-    }
+        res = "да";
+        }
     else
     {
-        string res = "нет";
+        res = "нет";        
     }
     return res;
 }
 int number = InputNum("Введите целое число от 1 до 7, обозначающее день недели: ");
 string resday = Holiday(number);
+Console.WriteLine(resday);
+
