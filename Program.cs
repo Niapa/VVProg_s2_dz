@@ -31,7 +31,7 @@ int DelSecond(int number)
     int remainder1 = (remainder-remainder % 10)/10;
     return remainder1;
 }
-int input = InputNum("Введите трехзначное число");
+int input = InputNum("Введите трехзначное число: ");
 
 int result = DelSecond(input);
 Console.WriteLine($"Вторая цифра введенного числа — {result}");
