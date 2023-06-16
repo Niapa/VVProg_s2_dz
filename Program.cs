@@ -24,14 +24,14 @@ int input = InputNum("Введите трехзначное число: ");
 int result = DelSecond(input);
 Console.WriteLine($"Вторая цифра введенного числа — {result}");
 
+
 ___Задача 13__: Напишите программу, которая выводит третью цифру заданного числа
 или сообщает, что третьей цифры нет.
 645 -> 5
 78 -> третьей цифры нет
 32679 -> 6
 ___________________________________________________________________________________
-
-using System.Globalization;
+*/
 
 int InputNum(string message)
 {
@@ -39,26 +39,37 @@ int InputNum(string message)
     int num = int.Parse(Console.ReadLine()!);
     return num;
 }
-int DelThird(int d)
+int DelThird(int e)
 {
-    if (d < 100)
-        Console.WriteLine("Третьей цифры нет");
-        else
+    if(e < 100)
     {
-        while (d >= 100)
+        e=0;
+        return e;
+    }
+    else
+    {
+        while(e >= 100)
         {
             int res = 0;
-            res = d / 10;
-            res = d;
+            res = e / 10;
+            e=res;
         }
-        d = d % 10;
-        int res = d;
-        return d;
+        e =  (e / 10) % 10;
+        return e;
     }
-   Console.WriteLine($"Третьей цифра: {d}");
 }
-int number = InputNum("Введите целое число: ");
-int MainRes = DelThird(num);
+int num = 0;
+num = InputNum("Введите целое число: ");
+int MainRes = 0;
+MainRes = DelThird(num);
+if(MainRes == 0)
+        Console.WriteLine("Третьей цифры нет ");
+else
+        Console.WriteLine($"Третья цифра: {MainRes}");
+    
+
+
+/*
 
 ______________________________________________________________________________________________
 
@@ -67,7 +78,7 @@ ___Задача 15__: Напишите программу, которая при
 6 -> да
 7 -> да
 1 -> нет
-*/
+
 
 
 int InputNum(string message)
@@ -92,4 +103,4 @@ string Holiday(int num)
 int number = InputNum("Введите целое число от 1 до 7, обозначающее день недели: ");
 string resday = Holiday(number);
 Console.WriteLine(resday);
-
+*/
